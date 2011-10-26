@@ -590,6 +590,30 @@ footer {
     padding: 7px 9px 7px;
     font-size: @basefont - 2px;
   }
+
+	// Dropdowns
+	&.dropdown {
+		&:after { .dropdown-triangle() }
+		&.solo-dropdown:after { margin: 7px -6px 0 -5px }
+		// Margins for different sizes
+		&.small:after { margin: 6px -3px 0 -5px }
+		&.large:after { margin: 7px -6px 0 }
+		
+		// White triangle on dark backgrounds
+		&.primary,
+		&.danger,
+		&.error,
+		&.success,
+		&.info {
+			&:after { border-top-color: #fff }
+		}
+	}
+
+	// Groups
+	&.left   { .border-radius(4px 0 0 4px) }
+	&.center { .border-radius(0); margin-left: -1px }
+	&.right  { .border-radius(0 4px 4px 0); margin-left: -1px }
+
 }
 // Super jank hack for removing border-radius from IE9 so we can keep filter gradients on alerts and buttons
 :root .alert-message,
